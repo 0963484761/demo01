@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        var n = prompt("Mời bạn nhập vào mảng");
+        for (var i = 0; i < n; i++) {
+            arr[i] = prompt("phần tử thứ " + i);
+        }
+        for (var i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "<br>");
+        }
+        // tính tổng
+        function Tinh_tong(arr) {
+            var tong = 0;
+            var dem = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    tong += Number(arr[i]);
+                    dem++;
+                }
+            }
+             var TBC = tong/dem;
+            return TBC;
+        }
+        document.write("Tổng trung bình cộng các số chẵn trong mảng là: " + Tinh_tong(arr));
+    </script>
+</body>
+
+</html>

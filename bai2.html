@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border:  1px solid #999999;
+            width: 600px;
+            height: 430px;
+            margin-left: 450px;
+            margin-top: 100px;
+            }   
+         #slile{
+             padding-left: 50px;
+             padding-top: 5px;
+         }  
+         #name1{
+             margin-left: 240px;
+             width: 60px;
+             height: 30px;
+             background-color: tomato;
+             outline: none;
+             border: none;
+             color: #ffffff;
+         }    
+         #name2{
+             margin-left: 10px;
+             width: 60px;
+             height: 30px;
+             background-color: tomato;
+             outline: none;
+             border: none;
+             color: #ffffff;
+         }    
+    </style>
+</head>
+<body onload="loatImg()">
+    <div class="container">
+         <p>
+             <button id="name1" onclick="pause()">PAUSE</button>
+             <button id="name2" onclick="start()">START</button>
+         </p>
+         <img id="slile" src="img/anh1.jpg" width="500px" height="350px" alt="ảnh">
+    </div>
+    <script>
+        var arrImg = [];
+        var and = 0;
+        function loatImg(){
+              for(var i = 0; i < 4 ; i++){
+                  arrImg[i] = new Image();
+                  arrImg[i].src = "img/anh" + (i+1) + ".jpg";
+              }
+        }
+        var product = document.getElementById("slile");
+        var t;
+        function start(){
+            if(and >= arrImg.length-1){
+                and = -1;
+            }
+            and++;
+            product.src = arrImg[and].src;
+            t = setTimeout("start()",500);
+        }
+        function pause(){
+            clearTimeout(t);
+        }
+    </script>
+</body>
+</html>

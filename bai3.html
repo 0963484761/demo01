@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid #999999;
+            width: 299px;
+            height: 300px;
+            margin-left: 600px;
+            margin-top: 100px;
+        }
+        p{
+            margin-left: 65px;
+            margin-top: 22px;
+        }
+        .content{
+            padding-left: 70px;
+            background-color: tomato;
+            margin-top: -20px;
+            height: 40px;
+        }
+        .content h2{
+            padding-top: 8px;
+            color: #ffffff;
+        }
+        #name1{
+            width: 95px;
+            height: 25px;
+            margin-left: 30px;
+            background-color: tomato;
+            outline: none;
+            border: none;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>ĐĂNG NHẬP</h2>
+        </div>
+        <form name="form1" action="#" onsubmit="return fuNy()">
+            <p>
+                Tên đăng nhập<br>
+                <input type="text" name="ten">
+            </p>
+            <p>
+                Mật khẩu<br>
+                <input type="password" name="matkhau">
+            </p>
+            <p>
+                Nhập lại mật khẩu<br>
+                <input type="password" name="nhaplai">
+            </p>
+            <p>
+                <input id="name1" type="submit" value="ĐĂNG NHẬP">
+            </p>
+        </form>
+    </div>
+    <script>
+          function fuNy(){
+              ten = document.form1.ten;
+              matkhau = document.form1.matkhau;
+
+              nhaplai = document.form1.nhaplai
+              if(ten.value == ""){
+                  alert("Không để chống tên đăng nhập")
+                  ten.focus();
+                  ten.style.outlineColor = "red";
+                  return false;
+              }
+              if(matkhau.value == ""){
+                  alert("Không để chống mật khẩu");
+                  matkhau.focus();
+                  matkhau.style.outlineColor = "red";
+                  return false;
+              }
+              if(nhaplai.value == "" || nhaplai.value !== matkhau.value){
+                    alert("Mật khẩu nhập lại phải khớp với mật khẩu");
+                    nhaplai.focus();
+                    nhaplai.style.outlineColor = "red";
+                    return false;
+              }
+          }
+    </script>
+</body>
+
+</html>
